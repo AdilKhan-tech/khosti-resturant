@@ -1,0 +1,1573 @@
+/* ==========================================================================
+   Marble Slab Frontend - Custom Styles
+   Organization: Layout > Typography > Colors > Components > Utilities
+   Approach: Bootstrap-first. Only override when Bootstrap cannot provide.
+   ========================================================================== */
+
+@font-face {
+  font-family: "Brandon_Grotesque_black";
+  src: url("/assets/fonts/HvDTrial_Brandon_Grotesque_black-BF64a625c944b08.otf")
+    format("opentype");
+  font-display: swap;
+}
+@font-face {
+  font-family: "Brandon_Grotesque_medium";
+  src: url("/assets/fonts/HvDTrial_Brandon_Grotesque_medium-BF64a625c84a521.otf")
+    format("opentype");
+  font-display: swap;
+}
+@font-face {
+  font-family: "Brandon_Grotesque";
+  src: url("/assets/fonts/HvDTrial_Brandon_Grotesque_regular-BF64a625c9311e1.otf")
+    format("opentype");
+  font-display: swap;
+}
+@font-face {
+  font-family: "Brandon_Grotesque-Bold";
+  src: url("/assets/fonts/HvDTrial_Brandon_Grotesque_bold-BF64a625c9151d5.otf")
+    format("opentype");
+  font-weight: bold;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Brandon_Grotesque_bold_italics";
+  src: url("/assets/fonts/HvDTrial_Brandon_Grotesque_bold_italic-BF64a625c93b0ce.otf")
+    format("opentype");
+  font-display: swap;
+}
+
+/* --- Layout --- */
+body,
+.marble-frontend {
+  font-family: "Brandon_Grotesque", sans-serif !important;
+  color: #363535;
+}
+.marble-frontend h1,
+.marble-frontend h2,
+.marble-frontend h3,
+.marble-frontend h4,
+.marble-frontend h5,
+.marble-frontend h6 {
+  font-family: "Brandon_Grotesque-Bold", sans-serif;
+}
+/* WP uses separate Bold/Medium faces instead of synthetic weights */
+.marble-frontend .fw-bold,
+.marble-frontend .fw-bolder,
+.marble-frontend .fw-semibold,
+.marble-frontend strong,
+.marble-frontend b,
+.marble-frontend .nav-link.fw-bold {
+  font-family: "Brandon_Grotesque-Bold", sans-serif !important;
+  font-weight: 700 !important;
+}
+.marble-frontend .fw-medium {
+  font-family: "Brandon_Grotesque_medium", sans-serif !important;
+  font-weight: 500 !important;
+}
+.marble-frontend .btn,
+.marble-frontend button,
+.marble-frontend .form-control,
+.marble-frontend .form-select,
+.marble-frontend input,
+.marble-frontend textarea,
+.marble-frontend select {
+  font-family: inherit;
+}
+
+.container {
+  max-width: 1440px !important;
+  padding-inline: 15px;
+}
+@media (min-width: 768px) {
+  .container {
+    padding-inline: 40px;
+  }
+}
+.marble-frontend {
+  overflow-x: hidden;
+}
+
+/* --- Typography --- */
+.font-brandon {
+  font-family: "Brandon_Grotesque", sans-serif !important;
+}
+.Brandon_Grotesque,
+.font-brandon-medium {
+  font-family: "Brandon_Grotesque_medium", sans-serif !important;
+}
+.font-brandon-black {
+  font-family: "Brandon_Grotesque_black", sans-serif !important;
+}
+.font-brandon-normal {
+  font-family: "Brandon_Grotesque", sans-serif !important;
+}
+.font-brandon-bold {
+  font-family: "Brandon_Grotesque-Bold", sans-serif !important;
+}
+.fs-13 {
+  font-size: 13px !important;
+}
+.fs-14 {
+  font-size: 14px !important;
+}
+.fs-16 {
+  font-size: 16px !important;
+}
+.fs-18 {
+  font-size: 18px !important;
+  line-height: 28px;
+}
+.fs-20 {
+  font-size: 20px !important;
+}
+.fs-22 {
+  font-size: 22px !important;
+}
+.fs-24 {
+  font-size: 24px !important;
+}
+.fs-25 {
+  font-size: 25px !important;
+}
+.fs-32 {
+  font-size: 32px !important;
+}
+.fs-30 {
+  font-size: 30px !important;
+}
+.fs-72 {
+  font-size: 72px !important;
+}
+.fs-35 {
+  font-size: 35px !important;
+}
+.fs-44 {
+  font-size: 44px !important;
+}
+.fs-50 {
+  font-size: 50px !important;
+}
+.fs-85 {
+  font-size: 85px !important;
+}
+.fs-fluid-50 {
+  font-size: clamp(24px, 4vw, 50px) !important;
+}
+.fs-fluid-42 {
+  font-size: clamp(24px, 4vw, 42px) !important;
+}
+.fs-fluid-38 {
+  font-size: clamp(24px, 4vw, 38px) !important;
+}
+.fs-11 {
+  font-size: 11px !important;
+}
+.fs-12 {
+  font-size: 12px !important;
+}
+
+/* --- Color utilities --- */
+.color-brown {
+  color: #584340;
+}
+.text-brown {
+  color: #584340 !important;
+}
+.text-blue,
+.text-sky {
+  color: #36bac7 !important;
+}
+.text-light-dark {
+  color: #363535 !important;
+}
+.text-brown-50 {
+  color: #b4a4a4 !important;
+}
+.text-purpleL {
+  color: #e05b8b !important;
+}
+.bg-brown {
+  background-color: rgb(88, 67, 64);
+}
+.bg-sky {
+  background-color: #36bac7 !important;
+}
+.bg-blue {
+  background-color: #36bac7;
+}
+.btn.bg-blue:hover,
+button.bg-blue:hover,
+a.bg-blue:hover,
+[role="button"].bg-blue:hover {
+  background-color: #30d3e2;
+}
+.bg-pink {
+  background-color: #ff679f33;
+}
+.bg-light-white {
+  background-color: #ede3db !important;
+}
+.bg-light-green {
+  background-color: #f4f9ff !important;
+}
+.bg-page-light {
+  background-color: #f8f9fc !important;
+}
+.bg-product-light {
+  background-color: #f5f5f5 !important;
+}
+.bg-related-light {
+  background-color: #e9ecef !important;
+}
+.bg-more-gift-blue {
+  background-color: #5af5fa50 !important;
+}
+.bg-more-gift-pink {
+  background-color: #ff008846 !important;
+}
+
+/* Contact Us — WordPress typography + brand bits */
+.bg-contact-scndsection {
+  background-color: #6d5794;
+}
+.bg-map-contact {
+  background-color: #f4f9ff;
+}
+.bg-faq-contact {
+  background-color: #ede3db;
+}
+.img-height-contact {
+  height: 114px;
+  width: auto;
+  object-fit: contain;
+}
+.line-height {
+  line-height: 1.15;
+}
+.customer-hotline {
+  font-size: 25px !important;
+  font-family: "Brandon_Grotesque_medium", sans-serif !important;
+  font-weight: 500;
+  color: #fff !important;
+}
+.customer-p {
+  font-family: "Brandon_Grotesque", sans-serif !important;
+  font-weight: 400;
+  color: #fff !important;
+}
+.visit-us-contact {
+  font-family: "Brandon_Grotesque_black", sans-serif !important;
+  font-weight: 900;
+  color: #212529;
+}
+.our-stories-visit {
+  font-family: "Brandon_Grotesque-Bold", sans-serif !important;
+  font-weight: 700;
+  color: #363535;
+}
+.our-Jeddah-visit,
+.jedda-btn-visit {
+  font-family: "Brandon_Grotesque-Bold", sans-serif !important;
+  font-weight: 700;
+  color: #36bac7 !important;
+  background: none;
+  border: none;
+}
+.dropdown-list-font {
+  font-family: "Brandon_Grotesque-Bold", sans-serif !important;
+  font-weight: 700;
+  color: #000;
+}
+.dropdown-list-font-centers {
+  font-family: "Brandon_Grotesque-Bold", sans-serif !important;
+  font-weight: 700;
+  color: #000;
+}
+.font-fam-address {
+  font-family: "Brandon_Grotesque_medium", sans-serif !important;
+  font-weight: 500;
+  color: #363535;
+}
+.sticker-visi-contact {
+  height: 74px;
+  width: auto;
+}
+.faq-sticker {
+  height: 150px;
+  position: absolute;
+  left: 1.5rem;
+  top: 1.5rem;
+  z-index: 1;
+}
+.bckg-faq-none {
+  background: transparent !important;
+}
+.faq-text-contact {
+  font-family: "Brandon_Grotesque_black", sans-serif !important;
+  font-weight: 900;
+  color: #212529;
+  line-height: 1.1;
+}
+.Frequently-ask-contact {
+  font-family: "Brandon_Grotesque_medium", sans-serif !important;
+  font-weight: 500;
+  color: #363535;
+}
+.how-place-order {
+  font-family: "Brandon_Grotesque-Bold", sans-serif !important;
+}
+.contact-us-page .faq-acordian-btn.accordion-button {
+  font-family: "Brandon_Grotesque-Bold", sans-serif !important;
+  font-weight: 700;
+  color: #000 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  padding-left: 0;
+  padding-right: 2.5rem;
+}
+.contact-us-page .faq-acordian-btn.accordion-button:not(.collapsed),
+.contact-us-page .faq-acordian-btn.accordion-button:focus {
+  color: #000 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  border-color: transparent;
+}
+.contact-us-page .accordion-body {
+  font-family: "Brandon_Grotesque", sans-serif !important;
+  font-weight: 400;
+  color: #363535;
+  padding-left: 0;
+}
+.contact-us-page .accordion-button::after {
+  background-image: url(/assets/images/plus.png) !important;
+  background-size: 1.25rem;
+}
+.contact-us-page .accordion-button:not(.collapsed)::after {
+  background-image: url(/assets/images/minus.png) !important;
+  transform: none;
+}
+.bg-field1 {
+  background-color: #36bac7;
+  border-radius: 8px;
+  color: #fff;
+}
+.bg-field1 .dropdown-list-font-centers,
+.bg-field1 .font-fam-address,
+.bg-field1 .fs-16 {
+  color: #fff !important;
+}
+.bg-fieldss {
+  background-color: #ffffff;
+  border-radius: 8px;
+}
+.img-height-contact-map {
+  min-height: 560px;
+  background-color: #d9dde1;
+}
+.show-map-address {
+  cursor: pointer;
+}
+
+@media (max-width: 767.98px) {
+  .contact-us-page .fs-72 {
+    font-size: 40px !important;
+  }
+  .contact-us-page .Frequently-ask-contact.fs-32 {
+    font-size: 25px !important;
+  }
+  .contact-us-page .faq-acordian-btn.fs-30 {
+    font-size: 20px !important;
+  }
+  .img-height-contact {
+    height: 72px;
+  }
+  .customer-hotline {
+    font-size: 18px !important;
+  }
+  .sticker-visi-contact {
+    height: 48px;
+  }
+  .img-height-contact-map {
+    min-height: 320px;
+  }
+  .faq-sticker {
+    height: 54px;
+  }
+}
+
+/* About Us — WordPress typography + brand bits */
+.about-us-hero-section {
+  background-color: #ede3db;
+}
+.why-different {
+  background-color: #f4f9ff;
+}
+.our-partners-section {
+  background-color: #d2eff1;
+}
+.marble-store-about-us {
+  font-family: "Brandon_Grotesque_black", sans-serif !important;
+  font-weight: 900;
+  color: #212529;
+}
+.about-us-banner-text,
+.text-about-us-section {
+  font-family: "Brandon_Grotesque", sans-serif !important;
+  font-weight: 400;
+  color: #584340;
+  line-height: 1.6;
+}
+.why-dif-text {
+  font-family: "Brandon_Grotesque_black", sans-serif !important;
+  font-weight: 900;
+  color: #e05b8b !important;
+}
+.about-us-page .font-brandon-black.fs-44 {
+  font-family: "Brandon_Grotesque_black", sans-serif !important;
+  font-weight: 900;
+  color: #584340;
+}
+.we-happy-txt-about {
+  font-family: "Brandon_Grotesque_medium", sans-serif !important;
+  font-weight: 500;
+  color: #758799 !important;
+  line-height: 1.8;
+}
+.our-partner-text {
+  font-family: "Brandon_Grotesque_black", sans-serif !important;
+  font-weight: 900;
+  color: #212529;
+}
+.fnt-partner {
+  font-family: "Brandon_Grotesque-Bold", sans-serif !important;
+  font-weight: 700;
+  color: #363535;
+}
+.partner-descr-text {
+  font-family: "Brandon_Grotesque", sans-serif !important;
+  font-weight: 400;
+  color: #363535;
+}
+.marbleslab,
+.greatamerican {
+  font-family: "Brandon_Grotesque-Bold", sans-serif !important;
+  font-weight: 700;
+  color: #e05b8b !important;
+}
+.marbleslabksa {
+  font-family: "Brandon_Grotesque-Bold", sans-serif !important;
+  font-weight: 700;
+  color: #36bac7 !important;
+}
+.about-hero-img {
+  max-width: 574px;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+.about-feature-img {
+  max-width: 286px;
+  max-height: 342px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+.about-partner-logo {
+  max-height: 150px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+.about-us-sticker {
+  height: 104px;
+  width: auto;
+  object-fit: contain;
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  z-index: 1;
+}
+.great-american-sticker {
+  position: absolute;
+  left: 50%;
+  top: 45%;
+  transform: translate(-50%, -50%);
+  height: 76px;
+  width: auto;
+  object-fit: contain;
+  z-index: 2;
+  pointer-events: none;
+}
+
+@media (max-width: 767.98px) {
+  .about-us-page .fs-72 {
+    font-size: 50px !important;
+  }
+  .about-us-page .fs-85 {
+    font-size: 50px !important;
+  }
+  .about-us-page .fs-44 {
+    font-size: 28px !important;
+  }
+  .about-feature-img {
+    max-height: 150px;
+    max-width: 160px;
+  }
+  .about-partner-logo {
+    max-height: 100px;
+  }
+  .about-us-sticker {
+    height: 62px;
+  }
+  .great-american-sticker {
+    height: 65px;
+  }
+}
+.bg-soft-blue {
+  background-color: #f1f6fb !important;
+}
+.bg-soft-cream-gradient {
+  background: linear-gradient(135deg, #fff9f0 0%, #fff5e8 100%) !important;
+}
+.bg-brand-pink-gradient {
+  background: linear-gradient(135deg, #e85d88 0%, #d94a6f 100%) !important;
+}
+.bg-translucent-white {
+  background-color: rgba(255, 255, 255, 0.5) !important;
+}
+.bg-brand-pink {
+  background-color: #e85d88 !important;
+}
+.bg-brand-pink-dark {
+  background-color: #e05b8b !important;
+}
+.bg-brand-teal {
+  background-color: #2aa7b3 !important;
+}
+.text-brand-pink {
+  color: #e85d88 !important;
+}
+.text-brand-teal {
+  color: #2aa7b3 !important;
+}
+.text-brand-brown {
+  color: #5a4a47 !important;
+}
+.text-gift {
+  color: #b85c1a !important;
+}
+.border-brand-pink {
+  border-color: #e75480 !important;
+}
+.bg-green {
+  background-color: #fded61;
+}
+.bg-outline-primary {
+  background-color: #36bbc71a;
+  border: 2px solid #36bac7;
+}
+
+/* --- Form controls --- */
+.form-control:focus {
+  box-shadow: none !important;
+  border-color: black !important;
+}
+.form-check-input:checked {
+  border-color: #ff7900 !important;
+  background-color: #ff7900 !important;
+}
+
+/* --- Buttons --- */
+.btn-primary {
+  transition: all 0.2s;
+}
+.btn-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(13, 110, 253, 0.3);
+}
+.add-to-cart-btn,
+.hero-btn {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  background: #e05b8b !important;
+  color: #fff !important;
+  border-color: #e05b8b !important;
+  border-radius: 50rem !important;
+  padding: 0.35rem 1.25rem !important;
+  font-family: "Brandon_Grotesque", sans-serif !important;
+  font-size: 20px !important;
+  font-weight: 400 !important;
+  line-height: 1.3;
+}
+.hero-btn.bg-sky,
+.add-to-cart-btn.bg-sky {
+  background: #36bac7 !important;
+  border-color: #36bac7 !important;
+}
+.product-cat {
+  color: #b4a4a4;
+  font-size: 18px;
+  font-family: "Brandon_Grotesque", sans-serif;
+}
+
+/* --- Header & Navigation --- */
+.nav-custom li {
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+}
+.nav-custom .active {
+  color: #ffe600;
+}
+.cursor {
+  cursor: pointer;
+}
+.w-fit {
+  width: fit-content !important;
+}
+.w-100px {
+  width: 100px !important;
+}
+.w-120px {
+  width: 120px !important;
+}
+.w-60px {
+  width: 60px !important;
+}
+.w-160px {
+  width: 160px !important;
+}
+.min-w-90px {
+  min-width: 90px !important;
+}
+.min-w-760 {
+  min-width: 760px !important;
+}
+.size-24 {
+  width: 24px !important;
+  height: 24px !important;
+}
+.size-32 {
+  width: 32px !important;
+  height: 32px !important;
+}
+.size-36 {
+  width: 36px !important;
+  height: 36px !important;
+}
+.size-38 {
+  width: 38px !important;
+  height: 38px !important;
+}
+.size-40 {
+  width: 40px !important;
+  height: 40px !important;
+}
+.size-42 {
+  width: 42px !important;
+  height: 42px !important;
+}
+.size-48 {
+  width: 48px !important;
+  height: 48px !important;
+}
+.size-54 {
+  width: 54px !important;
+  height: 54px !important;
+}
+.size-58 {
+  width: 58px !important;
+  height: 58px !important;
+}
+.size-60 {
+  width: 60px !important;
+  height: 60px !important;
+}
+.size-72 {
+  width: 72px !important;
+  height: 72px !important;
+}
+.size-100 {
+  width: 100px !important;
+  height: 100px !important;
+}
+.thumb-140x100 {
+  width: 140px !important;
+  height: 100px !important;
+}
+.img-max-h-80 {
+  max-height: 80px !important;
+}
+.img-max-w-70 {
+  max-width: 70% !important;
+}
+.img-max-w-150px {
+  max-width: 150px !important;
+}
+.empty-cart-image {
+  max-width: 240px;
+  filter: grayscale(1);
+}
+.cart-coupon-input {
+  max-width: 270px;
+  flex: 1 1 180px;
+}
+.pt-15px {
+  padding-top: 15px !important;
+}
+.pt-12px {
+  padding-top: 12px !important;
+}
+.gap-20px {
+  gap: 20px !important;
+}
+.gap-12px {
+  gap: 12px !important;
+}
+.form-check-input-lg {
+  width: 1.2rem !important;
+  height: 1.2rem !important;
+  cursor: pointer;
+}
+.position-top-cart-badge {
+  top: 0;
+  right: -10px;
+}
+.sticky-top-20 {
+  top: 20px;
+}
+.no-scrollbar {
+  scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.header.bg-sky {
+  padding: 5px;
+}
+.frontend-header-row {
+  min-height: 68px;
+  gap: 18px;
+  direction: ltr;
+}
+.frontend-header-logo {
+  order: 1;
+  width: 170px;
+}
+.frontend-header-logo a {
+  width: 100%;
+}
+.frontend-header-logo img {
+  display: block;
+  width: 170px;
+  max-width: 100%;
+  max-height: 54px;
+}
+.frontend-header-nav {
+  order: 2;
+  min-width: 0;
+}
+.frontend-header-nav .nav-link {
+  white-space: nowrap;
+  line-height: 1.1;
+  padding: 0;
+  font-family: "Brandon_Grotesque-Bold", sans-serif !important;
+  font-weight: 700 !important;
+  color: #fff;
+}
+.frontend-header-nav .active > .nav-link,
+.frontend-header-nav li.active .nav-link {
+  color: #fae20a !important;
+}
+.frontend-header-search {
+  order: 3;
+}
+.frontend-header-actions {
+  order: 4;
+}
+.frontend-header-actions img {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+}
+.header-search-group {
+  gap: 8px;
+  min-width: 285px;
+}
+.language-switcher-toggle {
+  padding: 0 !important;
+  font-size: 13px !important;
+  font-weight: 600;
+  line-height: 1;
+}
+.header-search-control {
+  height: 32px;
+  width: 230px;
+  border-radius: 999px;
+  overflow: hidden;
+  background-color: #fff;
+}
+.header-search-submit {
+  width: 42px;
+  height: 32px;
+  background-color: #e75480 !important;
+  border-radius: 0 999px 999px 0 !important;
+}
+.header-search-clear {
+  width: 32px;
+  height: 32px;
+  padding: 0 !important;
+}
+.header-search-input {
+  height: 32px;
+  min-width: 130px;
+  padding: 3px 12px !important;
+  font-size: 14px !important;
+  border-radius: 0 !important;
+}
+[dir="rtl"] .header-search-control {
+  flex-direction: row-reverse;
+}
+[dir="rtl"] .header-search-group,
+[dir="rtl"] .frontend-header-nav {
+  direction: rtl;
+}
+[dir="rtl"] .frontend-header-actions > div {
+  flex-direction: row-reverse;
+}
+[dir="rtl"] .frontend-header-actions {
+  order: 1;
+}
+[dir="rtl"] .frontend-header-search {
+  order: 2;
+}
+[dir="rtl"] .frontend-header-nav {
+  order: 3;
+}
+[dir="rtl"] .frontend-header-logo {
+  order: 4;
+}
+[dir="rtl"] .header-search-submit {
+  border-radius: 0 999px 999px 0 !important;
+}
+[dir="rtl"] .header-search-input {
+  text-align: right;
+}
+@media (max-width: 1199.98px) {
+  .frontend-header-row {
+    gap: 12px;
+  }
+  .frontend-header-logo {
+    width: 145px;
+  }
+  .frontend-header-nav .nav-link {
+    font-size: 14px !important;
+  }
+  .header-search-group {
+    min-width: 240px;
+  }
+  .header-search-control {
+    width: 190px;
+  }
+}
+@media (max-width: 991.98px) {
+  .frontend-header-row {
+    justify-content: space-between;
+    gap: 10px;
+  }
+  .frontend-header-logo {
+    width: 112px;
+  }
+  .frontend-header-search {
+    flex: 1 1 180px;
+    min-width: 0;
+  }
+  .frontend-header-actions {
+    flex: 0 0 auto;
+  }
+  .header-search-group {
+    min-width: 0;
+    justify-content: center;
+    gap: 6px;
+  }
+  .header-search-control {
+    width: min(100%, 190px);
+  }
+}
+@media (max-width: 575.98px) {
+  .header.bg-sky {
+    padding-inline: 0;
+  }
+  .frontend-header-row {
+    flex-wrap: wrap;
+    row-gap: 8px;
+  }
+  .frontend-header-logo {
+    width: 96px;
+  }
+  .frontend-header-actions {
+    margin-inline-start: auto;
+  }
+  .frontend-header-search {
+    order: 5;
+    flex: 0 0 100%;
+    width: 100%;
+  }
+  [dir="rtl"] .frontend-header-search {
+    order: 5;
+  }
+  .header-search-group {
+    justify-content: center;
+    width: 100%;
+  }
+  .header-search-control {
+    flex: 1 1 auto;
+    width: auto;
+    max-width: calc(100vw - 100px);
+  }
+  .header-search-input {
+    min-width: 0;
+    flex: 1 1 auto;
+  }
+}
+.tab {
+  padding: 10px;
+  white-space: nowrap;
+  cursor: pointer;
+  user-select: none;
+  flex-shrink: 0;
+  background: #f1f6fb;
+  border-radius: 13px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.tab:hover,
+.tab:active {
+  border: 2px solid #e05b8b !important;
+  color: #e05b8b !important;
+  background: #f1f6fb;
+}
+
+/* --- Offcanvas (scoped to #offcanvasRight) --- */
+#offcanvasRight {
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+  border-left: 3px solid #36bac7;
+  box-shadow: -5px 0 25px rgba(54, 186, 199, 0.1);
+}
+#offcanvasRight .offcanvas-title {
+  color: white;
+  font-family: "Brandon_Grotesque_medium", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0;
+}
+#offcanvasRight .offcanvas-header {
+  background: linear-gradient(135deg, #36bac7 0%, #2ba3b3 100%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 1.5rem 2rem;
+}
+#offcanvasRight .offcanvas-body a {
+  display: flex;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  margin-bottom: 0.5rem;
+  border-radius: 12px;
+  border: 2px solid #e7e7e7;
+  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+  color: #333;
+  font-family: "Brandon_Grotesque", sans-serif;
+  font-size: 1.1rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.storefront-product-grid {
+  --bs-gutter-x: 1.5rem;
+  --bs-gutter-y: 1.5rem;
+}
+.storefront-product-card {
+  min-height: 335px;
+  background-color: #f4f4f6 !important;
+}
+.storefront-product-card:hover {
+  background-color: #36bbc750 !important;
+}
+.storefront-product-img {
+  height: 150px !important;
+  padding: 0;
+}
+.storefront-product-body {
+  padding-top: 14px;
+}
+.storefront-product-title {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  min-height: 2.4em;
+  line-height: 1.2;
+}
+.storefront-product-meta {
+  line-height: 1.2;
+  color: #b4a4a4;
+  font-size: 18px;
+}
+.storefront-product-price {
+  line-height: 1.2;
+}
+.storefront-product-btn {
+  min-height: 38px;
+  padding: 0.35rem 1rem !important;
+  font-size: 18px !important;
+}
+.storefront-product-badge {
+  z-index: 1;
+  margin-top: 15px;
+  margin-left: 10px;
+  background-color: #e75480;
+  padding: 4px 9px;
+  font-size: 9px;
+  line-height: 1;
+}
+.storefront-product-carousel-item {
+  width: 240px;
+}
+.home-product-slider-track {
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+}
+.home-product-slider-track .storefront-product-carousel-item {
+  scroll-snap-align: start;
+}
+.home-product-slider-control {
+  z-index: 2;
+  width: 42px;
+  height: 42px;
+  background-color: rgba(255, 255, 255, 0.88);
+  color: #584340;
+  font-size: 42px;
+  line-height: 1;
+  box-shadow: 0 2px 12px rgba(88, 67, 64, 0.12);
+}
+.home-product-slider-prev {
+  left: -8px;
+}
+.home-product-slider-next {
+  right: -8px;
+}
+
+/* --- Modals (scoped to login/signup) --- */
+.login-modal .modal-content {
+  width: 100%;
+  max-width: 520px;
+  margin: 0 auto;
+  padding: 24px 30px;
+  border-radius: 16px;
+}
+.login-modal .modal-header {
+  justify-content: center;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+.login-modal .modal-header img {
+  margin-inline-start: 0 !important;
+}
+.login-logo {
+  width: 150px;
+}
+.login-action-height {
+  height: 40px;
+}
+.login-modal p {
+  margin-bottom: 8px;
+}
+.login-modal .form-control {
+  font-size: 14px !important;
+  padding: 10px 16px !important;
+  margin-bottom: 6px !important;
+}
+.login-modal .verification-code-inputs .otp-input.form-control {
+  border: 2px solid #e1e1e1;
+  width: 46px;
+  height: 46px;
+  padding: 10px !important;
+  margin: 0.25rem !important;
+  text-align: center;
+  display: inline-block;
+  box-sizing: border-box;
+  border-radius: 8px;
+  font-size: 18px !important;
+  font-weight: 700;
+}
+.login-modal .verification-code-inputs .otp-input.form-control:focus {
+  border-color: #0d6efd;
+  box-shadow: none;
+}
+/* --- Custom Cake / Ice Cream pages --- */
+.selectBox {
+  border: 2px solid #d5dce6;
+  transition: 0.4s ease;
+  cursor: pointer;
+}
+.selectBox:hover,
+.selectBox.active {
+  border: 2px solid #36bac7;
+  background-color: #d2eff1;
+}
+.selectFlavor2 {
+  cursor: pointer;
+}
+.falvorimg {
+  border-width: 2px !important;
+  overflow: hidden;
+  position: relative;
+  width: 80px;
+  height: 80px;
+  margin-inline: auto;
+}
+.falvorimg img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.selectFlavor2 .falvorimg:hover,
+.selectFlavor2.active .falvorimg {
+  border: 2px solid #36bac7 !important;
+  background-color: #d2eff1;
+}
+.selectFlavor2.active .falvorimg::after {
+  content: "";
+  width: 25px;
+  height: 25px;
+  background: #36bac7;
+  background-image: url("/assets/images/check.png");
+  position: absolute;
+  bottom: 4px;
+  right: 0;
+  border-radius: 50%;
+  background-position: center;
+  background-size: cover;
+}
+.selectnum {
+  width: 32px;
+  height: 32px;
+  line-height: 1.3;
+  font-size: 18px;
+}
+.bg-brown-50 {
+  background-color: rgba(88, 67, 64, 0.65);
+}
+.text-pink {
+  color: #e45b8f;
+}
+.addText-form input,
+.addText-form textarea {
+  border: 1px solid #d5dce6;
+  border-radius: 32px;
+  padding: 8px 19px;
+  outline: none;
+  font-size: 16px;
+  color: rgb(88, 67, 64);
+  resize: none;
+}
+.addText-form input:focus,
+.addText-form textarea:focus {
+  border-color: #36bac7;
+}
+.dashedline {
+  position: relative;
+  flex-wrap: wrap;
+}
+.dashedline p {
+  background: #ede3db;
+  padding: 0px 5px;
+  z-index: 1;
+  margin-bottom: 0.5rem;
+}
+.dashedline::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  border-bottom: 2px dashed #b4a3a3;
+  left: 0;
+  top: 42%;
+  z-index: 0;
+}
+.upload-box {
+  border-radius: 32px;
+  background-position: center;
+  background-size: cover;
+}
+
+/* --- WhatsApp floating button --- */
+.whatsapp-chat {
+  position: fixed;
+  bottom: 56px;
+  right: 30px;
+  color: #fff;
+  padding: 10px 16px;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  z-index: 7;
+}
+
+/* --- Footer --- */
+.footer-text {
+  color: #36bac7;
+  font-size: 18px;
+  font-family: "Brandon_Grotesque-Bold", sans-serif !important;
+  font-weight: 700;
+}
+.footerlink {
+  font-size: 20px;
+  color: #b4a4a4;
+  font-family: "Brandon_Grotesque", sans-serif !important;
+}
+/* --- Cart / Checkout / Delivery --- */
+.cart-box {
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+.cart-price {
+  color: #2aa7b3;
+}
+.cart-delete {
+  color: #e85d88;
+  cursor: pointer;
+}
+.cart-dashed {
+  border-bottom: 2px dashed #ccc;
+}
+.cart-summary {
+  background: #f3e8e6;
+}
+.cart-summary-line {
+  border-bottom: 2px dashed #bdaaa3;
+}
+.btn-pink-outline {
+  border: 1px solid #e85d88;
+  color: #e85d88;
+}
+.checkout-page {
+  background: #f4f9ff;
+  color: #584340;
+}
+.checkout-card {
+  padding: 42px 48px !important;
+}
+.checkout-section-title {
+  color: rgba(88, 67, 64, 0.45);
+}
+.checkout-input {
+  background: #ede3db !important;
+  border: 0 !important;
+  color: #584340;
+  font-family: "Brandon_Grotesque-Bold", sans-serif;
+  font-size: 16px;
+  min-height: 42px;
+}
+.checkout-input:focus {
+  background: #ede3db !important;
+  border-color: transparent !important;
+  box-shadow: 0 0 0 0.15rem rgba(54, 186, 199, 0.15) !important;
+}
+.summaryBoxD {
+  position: sticky;
+  top: 20px;
+}
+.delivery-button {
+  border: 2px solid #36bac7;
+  border-radius: 39px;
+  background: #f0f5f9;
+}
+.delivery-button button {
+  min-width: 120px;
+  margin: 4px 2px;
+  border-radius: 28px;
+  padding: 12px 16px;
+  background: transparent;
+  color: #36bac7;
+  border: 0;
+  transition: 0.5s ease;
+}
+.delivery-modal .delivery-button button {
+  width: 49%;
+  padding: 16px 5px;
+}
+.delivery-button .active,
+.delivery-button button:hover {
+  background: #36bac7;
+  color: #fff;
+}
+.bg-blue-light {
+  background: #e7f8fa;
+}
+.variationDiv {
+  padding-inline: 5px;
+  border-bottom: 1px solid #b4a3a3;
+  padding-bottom: 10px;
+  margin-top: -4px;
+}
+.checkout-row p {
+  background: #fff;
+  padding-bottom: 4px;
+}
+.checkout-row-label {
+  color: #b4a3a3 !important;
+  letter-spacing: 0.01em;
+}
+.checkout-row-value {
+  color: #252932 !important;
+  max-width: 62%;
+  line-height: 1.35;
+}
+.woocommerce-checkout-review-order .dashedline p {
+  background: #ede3db;
+}
+.woocommerce-checkout-review-order {
+  color: #584340;
+}
+.wc_payment_method {
+  color: #584340;
+  font-size: 14px;
+}
+.summary-mob-res {
+  color: #584340;
+  font-weight: 700;
+}
+.payment-description {
+  color: rgba(88, 67, 64, 0.75);
+  line-height: 1.5;
+}
+.delivery-modal {
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 1060;
+}
+.delivery-dialog {
+  max-width: 1120px;
+}
+.addresinput #pac-input {
+  background-color: #ede3db;
+  border-radius: 12px;
+  padding-top: 20px;
+}
+.drpbtn {
+  width: 100%;
+  background: #ede3db !important;
+  border-radius: 9px !important;
+  padding: 0.5rem 16px !important;
+  border-color: #ede3db !important;
+}
+.calender {
+  text-align: left;
+}
+.map-canvas {
+  height: 606px;
+  border-radius: 12px;
+  background: #ede3db;
+}
+
+/* --- Filter / option cards --- */
+.filter-card {
+  min-height: 132px;
+  background-color: #f8f9fa;
+  border-color: transparent !important;
+  border-width: 1px !important;
+}
+.filter-card.active {
+  background-color: #eefbfc;
+  border-color: #36bac7 !important;
+  border-width: 2px !important;
+  box-shadow: 0 0 0 3px rgba(54, 186, 199, 0.18);
+}
+.filter-toggle-active {
+  border-color: #36bac7 !important;
+  box-shadow: 0 0 0 3px rgba(54, 186, 199, 0.18);
+}
+.filter-menu {
+  width: min(520px, 92vw);
+}
+.filter-offcanvas {
+  width: min(550px, 100vw) !important;
+}
+.product-list-toolbar {
+  direction: ltr;
+  justify-content: flex-end;
+  overflow-x: auto;
+  padding-bottom: 2px;
+}
+[dir="rtl"] .product-list-toolbar {
+  justify-content: flex-start;
+}
+.product-list-filter-btn {
+  min-height: 30px;
+  white-space: nowrap;
+  order: 2;
+}
+.product-list-search {
+  min-height: 30px;
+  flex: 0 0 auto;
+  order: 1;
+}
+[dir="rtl"] .product-list-filter-btn {
+  order: 1;
+}
+[dir="rtl"] .product-list-search {
+  order: 2;
+}
+.search-form-compact {
+  width: min(100%, 280px);
+}
+.search-form-compact .form-control,
+.search-form-compact .btn {
+  min-height: 30px;
+}
+.search-form-compact .form-control {
+  text-align: center;
+}
+@media (max-width: 575.98px) {
+  .product-list-toolbar-row {
+    margin-inline: 0;
+  }
+  .product-list-toolbar {
+    gap: 8px !important;
+  }
+  .search-form-compact {
+    width: min(100%, 230px);
+  }
+}
+.option-card {
+  width: 110px;
+  cursor: pointer;
+}
+.option-card.active {
+  border-color: #e75480 !important;
+}
+.selectcooki6.active {
+  border-color: #36bac7 !important;
+  background-color: #d2eff1;
+}
+.occasion-filter-link {
+  background-color: #f1f6fb !important;
+  border-color: transparent !important;
+  color: #584340 !important;
+}
+.occasion-filter-link.active {
+  border-color: #e75480 !important;
+  color: #e75480 !important;
+}
+.occasion-modal-content {
+  width: 100%;
+  max-width: 750px !important;
+  margin: 0 auto;
+  padding: 30px !important;
+  border-radius: 16px;
+}
+.occasion-close {
+  opacity: 1 !important;
+}
+.occasion-card {
+  width: 100px;
+  height: 120px;
+  background-color: #f5f0eb;
+  cursor: pointer;
+  padding: 10px 5px;
+}
+.occasion-card-image {
+  width: 65px;
+  height: 65px;
+}
+.occasion-card-title {
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+.home-category-card {
+  min-height: 355px;
+  padding: 26px 24px 34px;
+  background-color: #d5dce6;
+}
+.home-category-title {
+  color: #2e2d33;
+  font-family: "Brandon_Grotesque-Bold", sans-serif !important;
+  font-size: 35px;
+  line-height: 1.1;
+}
+@media (max-width: 767.98px) {
+  .home-category-title {
+    font-size: 25px;
+  }
+}
+.home-category-img {
+  width: min(72%, 230px);
+  height: 230px;
+  object-fit: contain;
+}
+.page-banner {
+  width: 100%;
+  aspect-ratio: 1920 / 650;
+  min-height: 200px;
+  max-height: 650px;
+  overflow: hidden;
+}
+.price-pill {
+  font-size: 14px;
+  background-color: #f5f0eb;
+  border-radius: 4px;
+  padding: 2px 6px;
+}
+.upload-box-cake {
+  background-image: url("/assets/images/bg-cak.png");
+  padding-block: 15px;
+  min-height: 200px;
+}
+
+@media (max-width: 767px) {
+  .summaryBoxD {
+    position: static;
+  }
+  .checkout-card {
+    padding: 24px 18px !important;
+  }
+  .delivery-button button {
+    min-width: 96px;
+  }
+  .mob-res-coupon {
+    flex-direction: column;
+  }
+  .tabcontent .map-canvas {
+    height: 250px !important;
+  }
+}
+
+/* Storefront typography — mobile scale (matches WP f-30ar / fs-60ar) */
+@media (max-width: 767.98px) {
+  .marble-frontend .fs-44 {
+    font-size: 30px !important;
+  }
+  .marble-frontend .fs-72 {
+    font-size: 42px !important;
+  }
+  .marble-frontend .fs-50 {
+    font-size: 32px !important;
+  }
+  .marble-frontend .storefront-product-title.fs-24 {
+    font-size: 18px !important;
+  }
+  .marble-frontend .storefront-product-meta,
+  .marble-frontend .product-cat {
+    font-size: 14px;
+  }
+  .marble-frontend .hero-btn,
+  .marble-frontend .add-to-cart-btn {
+    font-size: 16px !important;
+  }
+}
