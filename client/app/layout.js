@@ -13,9 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "Sona Hotel | Luxury Stay",
-  description:
-    "Luxury hotel booking experience inspired by the Sona template design.",
+  title: "Khosti Restaurant | Fine Dining",
+  description: "A refined dining experience at Khosti Restaurant.",
 };
 
 export default function RootLayout({ children }) {

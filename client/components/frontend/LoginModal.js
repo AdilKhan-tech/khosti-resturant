@@ -5,9 +5,10 @@ import { useRouter } from "next/navigation";
 
 export default function LoginModal({ show, onClose }) {
   const router = useRouter();
-  const [email, setEmail] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
 
   if (!show) {
     return null;
@@ -16,17 +17,48 @@ export default function LoginModal({ show, onClose }) {
   function handleSubmit(event) {
     event.preventDefault();
 
-    if (!email || !password) {
-      setError("Please enter your email and password.");
+    if (!phoneNumber || !password) {
+      setError("Please enter your phone number and password.");
       return;
     }
 
-    window.localStorage.setItem(
-      "sona-auth",
-      JSON.stringify({ email, loggedIn: true }),
-    );
-    onClose();
-    router.push("/dashboard");
+    setLoading(true);
+    setError("");
+
+    fetch(
+      `${process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000"}/users/login`,
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          phone_number: phoneNumber,
+          password,
+        }),
+      },
+    )
+      .then(async (response) => {
+        const data = await response.json().catch(() => ({}));
+        if (!response.ok) {
+          throw new Error(data.message || "Invalid login credentials.");
+        }
+        return data;
+      })
+      .then((data) => {
+        window.localStorage.setItem(
+          "sona-auth",
+          JSON.stringify({
+            token: data.token,
+            user: data.user,
+            loggedIn: true,
+          }),
+        );
+        onClose();
+        router.push("/dashboard");
+      })
+      .catch((requestError) => {
+        setError(requestError.message || "Unable to sign in.");
+      })
+      .finally(() => setLoading(false));
   }
 
   return (
@@ -53,24 +85,24 @@ export default function LoginModal({ show, onClose }) {
 
         <div className="login-modal-intro">
           <span className="brand-mark mb-4">S</span>
-          <p className="section-tag mb-2">SONA PRIVATE ACCESS</p>
+          <p className="section-tag mb-2">KHOSTI PRIVATE ACCESS</p>
           <h2 id="login-modal-title">Welcome back.</h2>
           <p>Sign in to manage reservations and access your hotel dashboard.</p>
         </div>
 
         <form className="login-modal-form" onSubmit={handleSubmit}>
           <div className="mb-3">
-            <label htmlFor="login-email" className="form-label">
-              Email address
+            <label htmlFor="login-phone" className="form-label">
+              Phone number
             </label>
             <input
-              id="login-email"
-              type="email"
+              id="login-phone"
+              type="tel"
               className="form-control form-control-lg"
-              placeholder="you@example.com"
-              value={email}
-              onChange={(event) => setEmail(event.target.value)}
-              autoComplete="email"
+              placeholder="0500000000"
+              value={phoneNumber}
+              onChange={(event) => setPhoneNumber(event.target.value)}
+              autoComplete="tel"
             />
           </div>
           <div className="mb-2">
@@ -91,11 +123,13 @@ export default function LoginModal({ show, onClose }) {
           <button
             type="submit"
             className="btn btn-primary w-100 py-3 fw-semibold"
+            disabled={loading}
           >
-            Sign in <i className="bi bi-arrow-right ms-2"></i>
+            {loading ? "Signing in..." : "Sign in"}
+            <i className="bi bi-arrow-right ms-2"></i>
           </button>
           <p className="login-modal-note mb-0 mt-3">
-            Demo access accepts any valid email and non-empty password.
+            Use the phone number and password stored in your account.
           </p>
         </form>
       </div>

@@ -6,8 +6,8 @@ import LoginModal from "@/components/frontend/LoginModal";
 
 const navItems = [
   { href: "/", label: "Home" },
-  { href: "/rooms", label: "Rooms" },
-  { href: "/room-details", label: "Room Details" },
+  { href: "/rooms", label: "Menu" },
+  { href: "/room-details", label: "Private Dining" },
   { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },
 ];
@@ -35,10 +35,10 @@ export default function Header() {
               href="/"
               className="navbar-brand d-flex align-items-center gap-3 text-decoration-none"
             >
-              <span className="brand-mark">S</span>
+              <span className="brand-mark">K</span>
               <div>
-                <div className="brand-name">SONA</div>
-                <small className="brand-sub">HOUSE OF STAYS</small>
+                <div className="brand-name">KHOSTI RESTAURANT</div>
+                <small className="brand-sub">FINE DINING</small>
               </div>
             </Link>
 
@@ -77,7 +77,7 @@ export default function Header() {
                   href="/booking"
                   className="btn btn-primary px-4 py-2 fw-semibold"
                 >
-                  Reserve a Room <i className="bi bi-arrow-up-right ms-2"></i>
+                  Reserve a Table <i className="bi bi-arrow-up-right ms-2"></i>
                 </Link>
               </div>
             </div>

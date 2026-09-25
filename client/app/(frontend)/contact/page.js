@@ -12,7 +12,7 @@ const contactItems = [
   {
     icon: "bi bi-envelope-fill",
     title: "Email",
-    value: "info@sonahotel.com",
+    value: "info@khostirestaurant.com",
   },
 ];
 
@@ -112,7 +112,7 @@ export default function ContactPage() {
                     <div className="map-pin mb-3">
                       <i className="bi bi-geo-alt-fill"></i>
                     </div>
-                    <h4 className="text-white mb-0">SONA Hotel</h4>
+                    <h4 className="text-white mb-0">Khosti Restaurant</h4>
                     <p className="text-white-50 mb-0">Central London</p>
                   </div>
                 </div>

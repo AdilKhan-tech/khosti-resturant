@@ -25,10 +25,10 @@ export default function DashboardSidebar({
     <aside className={`dashboard-sidebar ${collapsed ? "is-collapsed" : ""}`}>
       <div className="dashboard-sidebar-head">
         <Link href="/" className="dashboard-brand text-decoration-none">
-          <span className="brand-mark">S</span>
+          <span className="brand-mark">K</span>
           <div className="dashboard-brand-copy">
-            <strong>SONA</strong>
-            <small>HOTEL OPERATIONS</small>
+            <strong>KHOSTI</strong>
+            <small>RESTAURANT OPERATIONS</small>
           </div>
         </Link>
         <button
@@ -72,7 +72,9 @@ export default function DashboardSidebar({
       <div className="dashboard-sidebar-footer">
         <div className="dashboard-footer-card">
           <p className="small mb-1">Signed in as</p>
-          <p className="mb-0 text-truncate">{email || "admin@sonahotel.com"}</p>
+          <p className="mb-0 text-truncate">
+            {email || "admin@khostirestaurant.com"}
+          </p>
         </div>
         <button
           type="button"

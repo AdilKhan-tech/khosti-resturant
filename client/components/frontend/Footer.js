@@ -15,10 +15,10 @@ export default function Footer() {
         <div className="row g-5">
           <div className="col-lg-4">
             <div className="d-flex align-items-center gap-3 mb-3">
-              <span className="brand-mark footer-mark">S</span>
+              <span className="brand-mark footer-mark">K</span>
               <div>
-                <div className="brand-name text-white">SONA</div>
-                <small className="brand-sub text-white-50">HOTEL</small>
+                <div className="brand-name text-white">KHOSTI RESTAURANT</div>
+                <small className="brand-sub text-white-50">FINE DINING</small>
               </div>
             </div>
             <p className="text-white-50 mb-0">
@@ -42,7 +42,7 @@ export default function Footer() {
             <ul className="list-unstyled text-white-50 mb-0">
               <li className="mb-2">15 Prince Road, London</li>
               <li className="mb-2">+11 345 67890</li>
-              <li>info@sonahotel.com</li>
+              <li>info@khostirestaurant.com</li>
             </ul>
           </div>
 

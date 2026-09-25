@@ -76,9 +76,9 @@ export default function AboutPage() {
                 A place where comfort meets elegance.
               </h2>
               <p className="text-secondary mb-3">
-                SONA Hotel was created to offer travelers a refined city retreat
-                built on warm hospitality, elevated design, and exceptional
-                service.
+                Khosti Restaurant was created to offer guests a refined dining
+                experience built on warm hospitality, elevated design, and
+                exceptional service.
               </p>
               <p className="text-secondary mb-0">
                 From early morning wellness rituals to late-night dining

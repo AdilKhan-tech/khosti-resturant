@@ -26,7 +26,7 @@ export default function SettingsPage() {
                   <label className="form-label">Hotel name</label>
                   <input
                     className="form-control dashboard-form-control"
-                    defaultValue="Sona Hotel"
+                    defaultValue="Khosti Restaurant"
                   />
                 </div>
                 <div className="col-md-6">
@@ -34,7 +34,7 @@ export default function SettingsPage() {
                   <input
                     type="email"
                     className="form-control dashboard-form-control"
-                    defaultValue="hello@sonahotel.com"
+                    defaultValue="hello@khostirestaurant.com"
                   />
                 </div>
                 <div className="col-md-6">
