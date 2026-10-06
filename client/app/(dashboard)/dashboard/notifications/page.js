@@ -1,4 +1,4 @@
-import DashboardShell from "../../../../components/dashboard/DashboardShell";
+import Shell from "../../../../components/dashboard/Shell";
 
 const notifications = [
   [
@@ -33,7 +33,7 @@ const notifications = [
 
 export default function NotificationsPage() {
   return (
-    <DashboardShell
+    <Shell
       eyebrow="Stay informed"
       title="Notifications"
       action={
@@ -66,6 +66,6 @@ export default function NotificationsPage() {
           ))}
         </div>
       </section>
-    </DashboardShell>
+    </Shell>
   );
 }

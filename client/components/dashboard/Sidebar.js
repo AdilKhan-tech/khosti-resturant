@@ -14,7 +14,7 @@ const navigation = [
   ["Settings", "/dashboard/settings", "bi-gear"],
 ];
 
-export default function DashboardSidebar({
+export default function Sidebar({
   pathname,
   email,
   collapsed,

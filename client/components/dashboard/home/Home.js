@@ -1,6 +1,6 @@
 import Link from "next/link";
 import AddBooking from "../booking/AddBooking";
-import DashboardShell from "../DashboardShell";
+import Shell from "../Shell";
 
 const stats = [
   ["Occupancy", "78%", "+6.4% this month", "bi-bar-chart-line"],
@@ -16,7 +16,7 @@ const arrivals = [
 
 export default function Home() {
   return (
-    <DashboardShell
+    <Shell
       eyebrow="Thursday, 24 September 2026"
       title="Good morning, welcome back."
       action={<AddBooking />}
@@ -132,6 +132,6 @@ export default function Home() {
           </div>
         </section>
       </div>
-    </DashboardShell>
+    </Shell>
   );
 }

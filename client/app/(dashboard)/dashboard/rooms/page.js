@@ -1,5 +1,5 @@
 import AddRoom from "../../../../components/dashboard/room/AddRoom";
-import DashboardShell from "../../../../components/dashboard/DashboardShell";
+import Shell from "../../../../components/dashboard/Shell";
 
 const rooms = [
   [
@@ -46,7 +46,7 @@ const rooms = [
 
 export default function RoomsPage() {
   return (
-    <DashboardShell
+    <Shell
       eyebrow="Inventory"
       title="Rooms and availability"
       action={<AddRoom />}
@@ -131,6 +131,6 @@ export default function RoomsPage() {
           </div>
         </div>
       </section>
-    </DashboardShell>
+    </Shell>
   );
 }

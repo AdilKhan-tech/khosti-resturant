@@ -41,7 +41,7 @@ const panelContent = {
   },
 };
 
-export default function DashboardHeader({ email, onToggleSidebar }) {
+export default function Header({ email, onToggleSidebar }) {
   const [activePanel, setActivePanel] = useState(null);
 
   function togglePanel(panel) {

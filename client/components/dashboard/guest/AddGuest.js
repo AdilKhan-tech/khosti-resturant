@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import DashboardCanvas from "../DashboardCanvas";
+import Canvas from "../Canvas";
 
 export default function AddGuest() {
   const [open, setOpen] = useState(false);
@@ -15,7 +15,7 @@ export default function AddGuest() {
       >
         <i className="bi bi-person-plus me-2"></i>Add guest
       </button>
-      <DashboardCanvas
+      <Canvas
         open={open}
         onClose={() => setOpen(false)}
         eyebrow="Guest relations"
@@ -84,7 +84,7 @@ export default function AddGuest() {
             </button>
           </div>
         </form>
-      </DashboardCanvas>
+      </Canvas>
     </>
   );
 }

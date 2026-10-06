@@ -2,12 +2,12 @@ const contactItems = [
   {
     icon: "bi bi-geo-alt-fill",
     title: "Address",
-    value: "15 Prince Road, London, United Kingdom",
+    value: "Time Square Trade Center Top-City, Islamabad, Pakistan",
   },
   {
     icon: "bi bi-telephone-fill",
     title: "Phone",
-    value: "+11 345 67890",
+    value: "+92 342 7482441",
   },
   {
     icon: "bi bi-envelope-fill",
@@ -113,7 +113,7 @@ export default function ContactPage() {
                       <i className="bi bi-geo-alt-fill"></i>
                     </div>
                     <h4 className="text-white mb-0">Khosti Restaurant</h4>
-                    <p className="text-white-50 mb-0">Central London</p>
+                    <p className="text-white-50 mb-0">Islamabad, Pakistan</p>
                   </div>
                 </div>
               </div>

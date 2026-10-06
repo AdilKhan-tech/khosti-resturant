@@ -1,10 +1,16 @@
 "use client";
 
 import { useState } from "react";
-import DashboardCanvas from "../DashboardCanvas";
+import CustomDatePiker from "../../ui/CustomDatePiker";
+import CustomTimePiker from "../../ui/CustomTimePiker";
+import Canvas from "../Canvas";
 
 export default function AddBooking() {
   const [open, setOpen] = useState(false);
+  const [checkIn, setCheckIn] = useState("2026-10-11");
+  const [checkInTime, setCheckInTime] = useState("14:00");
+  const [checkOut, setCheckOut] = useState("2026-10-16");
+  const [checkOutTime, setCheckOutTime] = useState("11:00");
 
   return (
     <>
@@ -15,7 +21,7 @@ export default function AddBooking() {
       >
         <i className="bi bi-plus-lg me-2"></i>New reservation
       </button>
-      <DashboardCanvas
+      <Canvas
         open={open}
         onClose={() => setOpen(false)}
         eyebrow="Reservations"
@@ -49,12 +55,33 @@ export default function AddBooking() {
               </select>
             </div>
             <div className="col-6">
-              <label className="form-label">Check-in</label>
-              <input type="date" className="form-control" required />
+              <CustomDatePiker
+                label="Check-in"
+                value={checkIn}
+                onChange={(value) => setCheckIn(value)}
+              />
             </div>
             <div className="col-6">
-              <label className="form-label">Check-out</label>
-              <input type="date" className="form-control" required />
+              <CustomDatePiker
+                label="Check-out"
+                value={checkOut}
+                minDate={checkIn}
+                onChange={(value) => setCheckOut(value)}
+              />
+            </div>
+            <div className="col-6">
+              <CustomTimePiker
+                label="Check-in time"
+                value={checkInTime}
+                onChange={(value) => setCheckInTime(value)}
+              />
+            </div>
+            <div className="col-6">
+              <CustomTimePiker
+                label="Check-out time"
+                value={checkOutTime}
+                onChange={(value) => setCheckOutTime(value)}
+              />
             </div>
             <div className="col-6">
               <label className="form-label">Guests</label>
@@ -86,7 +113,7 @@ export default function AddBooking() {
             </button>
           </div>
         </form>
-      </DashboardCanvas>
+      </Canvas>
     </>
   );
 }

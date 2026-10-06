@@ -1,52 +1,61 @@
+"use client";
+
+import { useState } from "react";
 import AddBooking from "../../../../components/dashboard/booking/AddBooking";
-import DashboardShell from "../../../../components/dashboard/DashboardShell";
+import Shell from "../../../../components/dashboard/Shell";
+import { filterBookings } from "../../../../lib/bookingFilters";
 
 const bookings = [
-  [
-    "BK-2048",
-    "Olivia Bennett",
-    "Premier Suite",
-    "24 Sep - 27 Sep",
-    "$1,860",
-    "Confirmed",
-  ],
-  [
-    "BK-2047",
-    "Ethan Carter",
-    "Deluxe King Room",
-    "24 Sep - 26 Sep",
-    "$740",
-    "Checked in",
-  ],
-  [
-    "BK-2046",
-    "Mia Anderson",
-    "Garden Residence",
-    "25 Sep - 30 Sep",
-    "$2,450",
-    "Pending",
-  ],
-  [
-    "BK-2045",
-    "Noah Wilson",
-    "Executive Twin",
-    "26 Sep - 29 Sep",
-    "$1,120",
-    "Confirmed",
-  ],
-  [
-    "BK-2044",
-    "Sophia Miller",
-    "Premier Suite",
-    "28 Sep - 02 Oct",
-    "$2,480",
-    "Cancelled",
-  ],
+  {
+    id: "BK-2048",
+    guest: "Olivia Bennett",
+    room: "Premier Suite",
+    stay: "24 Sep - 27 Sep",
+    amount: "$1,860",
+    status: "Confirmed",
+  },
+  {
+    id: "BK-2047",
+    guest: "Ethan Carter",
+    room: "Deluxe King Room",
+    stay: "24 Sep - 26 Sep",
+    amount: "$740",
+    status: "Checked in",
+  },
+  {
+    id: "BK-2046",
+    guest: "Mia Anderson",
+    room: "Garden Residence",
+    stay: "25 Sep - 30 Sep",
+    amount: "$2,450",
+    status: "Pending",
+  },
+  {
+    id: "BK-2045",
+    guest: "Noah Wilson",
+    room: "Executive Twin",
+    stay: "26 Sep - 29 Sep",
+    amount: "$1,120",
+    status: "Confirmed",
+  },
+  {
+    id: "BK-2044",
+    guest: "Sophia Miller",
+    room: "Premier Suite",
+    stay: "28 Sep - 02 Oct",
+    amount: "$2,480",
+    status: "Cancelled",
+  },
 ];
 
+const bookingTabs = ["All bookings", "Confirmed", "Pending", "Cancelled"];
+
 export default function BookingsPage() {
+  const [activeTab, setActiveTab] = useState("All bookings");
+  const visibleBookings = filterBookings(bookings, activeTab);
+
   return (
-    <DashboardShell
+    <Shell
       eyebrow="Reservations"
       title="Manage bookings"
       action={<AddBooking />}
@@ -73,19 +82,23 @@ export default function BookingsPage() {
           <div className="dashboard-panel-heading">
             <div>
               <p className="section-tag mb-1">Reservation desk</p>
-              <h3>All bookings</h3>
+              <h3>{activeTab}</h3>
             </div>
             <button type="button" className="btn btn-sm btn-outline-dark">
               <i className="bi bi-download me-2"></i>Export
             </button>
           </div>
           <div className="dashboard-filter-row">
-            <button className="active" type="button">
-              All bookings
-            </button>
-            <button type="button">Confirmed</button>
-            <button type="button">Pending</button>
-            <button type="button">Cancelled</button>
+            {bookingTabs.map((tab) => (
+              <button
+                key={tab}
+                type="button"
+                className={activeTab === tab ? "active" : ""}
+                onClick={() => setActiveTab(tab)}
+              >
+                {tab}
+              </button>
+            ))}
           </div>
           <div className="table-responsive">
             <table className="table dashboard-table align-middle mb-0">
@@ -100,27 +113,29 @@ export default function BookingsPage() {
                 </tr>
               </thead>
               <tbody>
-                {bookings.map(([id, guest, room, stay, amount, status]) => (
-                  <tr key={id}>
-                    <td className="fw-semibold">{id}</td>
-                    <td>{guest}</td>
-                    <td>{room}</td>
-                    <td>{stay}</td>
-                    <td className="fw-semibold">{amount}</td>
-                    <td>
-                      <span
-                        className={`status-badge ${status.toLowerCase().replace(" ", "-")}`}
-                      >
-                        {status}
-                      </span>
-                    </td>
-                  </tr>
-                ))}
+                {visibleBookings.map(
+                  ({ id, guest, room, stay, amount, status }) => (
+                    <tr key={id}>
+                      <td className="fw-semibold">{id}</td>
+                      <td>{guest}</td>
+                      <td>{room}</td>
+                      <td>{stay}</td>
+                      <td className="fw-semibold">{amount}</td>
+                      <td>
+                        <span
+                          className={`status-badge ${status.toLowerCase().replace(/\s+/g, "-")}`}
+                        >
+                          {status}
+                        </span>
+                      </td>
+                    </tr>
+                  ),
+                )}
               </tbody>
             </table>
           </div>
         </div>
       </section>
-    </DashboardShell>
+    </Shell>
   );
 }

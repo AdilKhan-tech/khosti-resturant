@@ -1,8 +1,5 @@
-export default function DashboardLayout({ children }) {
-  return (
-    <>
-      <link rel="stylesheet" href="/assets/css/dashboard.css" />
-      {children}
-    </>
-  );
+import DashboardLayout from "../../layouts/Dashboard";
+
+export default function DashboardRouteLayout({ children }) {
+  return <DashboardLayout>{children}</DashboardLayout>;
 }

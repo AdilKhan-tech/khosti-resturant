@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import DashboardCanvas from "../DashboardCanvas";
+import Canvas from "../Canvas";
 
 export default function AddService() {
   const [open, setOpen] = useState(false);
@@ -15,7 +15,7 @@ export default function AddService() {
       >
         <i className="bi bi-plus-lg me-2"></i>Add service
       </button>
-      <DashboardCanvas
+      <Canvas
         open={open}
         onClose={() => setOpen(false)}
         eyebrow="Guest experience"
@@ -88,7 +88,7 @@ export default function AddService() {
             </button>
           </div>
         </form>
-      </DashboardCanvas>
+      </Canvas>
     </>
   );
 }

@@ -40,8 +40,10 @@ export default function Footer() {
           <div className="col-lg-3 col-md-4">
             <h5 className="text-white mb-3">Contact</h5>
             <ul className="list-unstyled text-white-50 mb-0">
-              <li className="mb-2">15 Prince Road, London</li>
-              <li className="mb-2">+11 345 67890</li>
+              <li className="mb-2">
+                Time Square Trade Center Top-City, Islamabad, Pakistan
+              </li>
+              <li className="mb-2">+11 342 7482441</li>
               <li>info@khostirestaurant.com</li>
             </ul>
           </div>

@@ -1,4 +1,4 @@
-import DashboardShell from "../../../../components/dashboard/DashboardShell";
+import Shell from "../../../../components/dashboard/Shell";
 
 const reviews = [
   [
@@ -26,7 +26,7 @@ const reviews = [
 
 export default function ReviewsPage() {
   return (
-    <DashboardShell
+    <Shell
       eyebrow="Guest feedback"
       title="Reviews and reputation"
       action={
@@ -88,6 +88,6 @@ export default function ReviewsPage() {
           ))}
         </div>
       </section>
-    </DashboardShell>
+    </Shell>
   );
 }

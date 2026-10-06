@@ -1,8 +1,8 @@
-import DashboardShell from "../../../../components/dashboard/DashboardShell";
+import Shell from "../../../../components/dashboard/Shell";
 
 export default function SettingsPage() {
   return (
-    <DashboardShell
+    <Shell
       eyebrow="Administration"
       title="Settings"
       action={
@@ -34,14 +34,14 @@ export default function SettingsPage() {
                   <input
                     type="email"
                     className="form-control dashboard-form-control"
-                    defaultValue="hello@khostirestaurant.com"
+                    defaultValue="owner@khostirestaurant.com"
                   />
                 </div>
                 <div className="col-md-6">
                   <label className="form-label">Phone number</label>
                   <input
                     className="form-control dashboard-form-control"
-                    defaultValue="+1 555 010 2026"
+                    defaultValue="+92 342 7482441"
                   />
                 </div>
                 <div className="col-md-6">
@@ -59,7 +59,7 @@ export default function SettingsPage() {
                   <label className="form-label">Hotel address</label>
                   <input
                     className="form-control dashboard-form-control"
-                    defaultValue="24 Garden Avenue, New York"
+                    defaultValue="Time Square Trade Center Top-City, Islamabad, Pakistan"
                   />
                 </div>
               </div>
@@ -98,6 +98,6 @@ export default function SettingsPage() {
           </div>
         </div>
       </section>
-    </DashboardShell>
+    </Shell>
   );
 }

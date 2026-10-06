@@ -1,5 +1,5 @@
 import AddGuest from "../../../../components/dashboard/guest/AddGuest";
-import DashboardShell from "../../../../components/dashboard/DashboardShell";
+import Shell from "../../../../components/dashboard/Shell";
 
 const guests = [
   [
@@ -41,7 +41,7 @@ const guests = [
 
 export default function GuestsPage() {
   return (
-    <DashboardShell
+    <Shell
       eyebrow="Guest relations"
       title="Know your guests"
       action={<AddGuest />}
@@ -120,6 +120,6 @@ export default function GuestsPage() {
           </div>
         </div>
       </section>
-    </DashboardShell>
+    </Shell>
   );
 }

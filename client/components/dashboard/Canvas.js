@@ -2,7 +2,7 @@
 
 import Offcanvas from "react-bootstrap/Offcanvas";
 
-export default function DashboardCanvas({
+export default function Canvas({
   open,
   title,
   eyebrow,

@@ -1,5 +1,5 @@
 import AddService from "../../../../components/dashboard/service/AddService";
-import DashboardShell from "../../../../components/dashboard/DashboardShell";
+import Shell from "../../../../components/dashboard/Shell";
 
 const services = [
   ["Airport transfer", "Transport", "$45", "Available", "bi-car-front"],
@@ -10,7 +10,7 @@ const services = [
 
 export default function ServicesPage() {
   return (
-    <DashboardShell
+    <Shell
       eyebrow="Guest experience"
       title="Hotel services"
       action={<AddService />}
@@ -100,6 +100,6 @@ export default function ServicesPage() {
           </div>
         </div>
       </section>
-    </DashboardShell>
+    </Shell>
   );
 }

@@ -2,10 +2,10 @@
 
 import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
-import DashboardHeader from "./DashboardHeader";
-import DashboardSidebar from "./DashboardSidebar";
+import Header from "./Header";
+import Sidebar from "./Sidebar";
 
-export default function DashboardShell({ children, eyebrow, title, action }) {
+export default function Shell({ children, eyebrow, title, action }) {
   const router = useRouter();
   const pathname = usePathname();
   const [email, setEmail] = useState("");
@@ -29,7 +29,7 @@ export default function DashboardShell({ children, eyebrow, title, action }) {
     <div
       className={`dashboard-shell ${sidebarCollapsed ? "sidebar-collapsed" : ""}`}
     >
-      <DashboardSidebar
+      <Sidebar
         pathname={pathname}
         email={email}
         collapsed={sidebarCollapsed}
@@ -38,7 +38,7 @@ export default function DashboardShell({ children, eyebrow, title, action }) {
       />
 
       <main className="dashboard-main">
-        <DashboardHeader
+        <Header
           email={email}
           onToggleSidebar={() => setSidebarCollapsed((value) => !value)}
         />

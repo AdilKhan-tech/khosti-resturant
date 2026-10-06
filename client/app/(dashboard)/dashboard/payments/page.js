@@ -1,4 +1,4 @@
-import DashboardShell from "../../../../components/dashboard/DashboardShell";
+import Shell from "../../../../components/dashboard/Shell";
 
 const payments = [
   ["PM-8821", "Olivia Bennett", "BK-2048", "24 Sep 2026", "$1,860", "Paid"],
@@ -9,7 +9,7 @@ const payments = [
 
 export default function PaymentsPage() {
   return (
-    <DashboardShell
+    <Shell
       eyebrow="Finance"
       title="Payments and transactions"
       action={
@@ -91,6 +91,6 @@ export default function PaymentsPage() {
           </div>
         </div>
       </section>
-    </DashboardShell>
+    </Shell>
   );
 }

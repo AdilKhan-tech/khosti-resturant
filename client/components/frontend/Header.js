@@ -21,10 +21,11 @@ export default function Header() {
         <div className="header-topbar text-white py-2">
           <div className="container d-flex justify-content-between align-items-center gap-3">
             <span>
-              <i className="bi bi-geo-alt me-2"></i>15 Prince Road, London
+              <i className="bi bi-geo-alt me-2"></i>Time Square Trade Center
+              Top-City, Islamabad, Pakistan
             </span>
             <span>
-              <i className="bi bi-telephone me-2"></i>+11 345 67890
+              <i className="bi bi-telephone me-2"></i>+92 342 7482441
             </span>
           </div>
         </div>

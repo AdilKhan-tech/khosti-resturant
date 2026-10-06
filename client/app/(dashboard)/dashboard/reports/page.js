@@ -1,4 +1,4 @@
-import DashboardShell from "../../../../components/dashboard/DashboardShell";
+import Shell from "../../../../components/dashboard/Shell";
 
 const channels = [
   ["Direct website", "42%", "$20,244", "bi-globe2"],
@@ -9,7 +9,7 @@ const channels = [
 
 export default function ReportsPage() {
   return (
-    <DashboardShell
+    <Shell
       eyebrow="Performance"
       title="Reports and insights"
       action={
@@ -124,6 +124,6 @@ export default function ReportsPage() {
           </div>
         </div>
       </section>
-    </DashboardShell>
+    </Shell>
   );
 }

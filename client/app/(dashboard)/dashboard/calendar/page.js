@@ -1,5 +1,5 @@
 import AddBooking from "../../../../components/dashboard/booking/AddBooking";
-import DashboardShell from "../../../../components/dashboard/DashboardShell";
+import Shell from "../../../../components/dashboard/Shell";
 
 const days = [
   "Mon 21",
@@ -18,7 +18,7 @@ const events = [
 
 export default function CalendarPage() {
   return (
-    <DashboardShell
+    <Shell
       eyebrow="Front desk schedule"
       title="Calendar and availability"
       action={<AddBooking />}
@@ -70,6 +70,6 @@ export default function CalendarPage() {
           </div>
         </div>
       </section>
-    </DashboardShell>
+    </Shell>
   );
 }

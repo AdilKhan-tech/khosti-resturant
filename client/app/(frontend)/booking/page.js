@@ -1,4 +1,9 @@
+"use client";
+
+import { useState } from "react";
 import Link from "next/link";
+import CustomDatePiker from "../../../components/ui/CustomDatePiker";
+import CustomTimePiker from "../../../components/ui/CustomTimePiker";
 
 const stayHighlights = [
   "Breakfast Included",
@@ -21,6 +26,11 @@ const summaryRooms = [
 ];
 
 export default function BookingPage() {
+  const [checkIn, setCheckIn] = useState("2026-10-11");
+  const [checkInTime, setCheckInTime] = useState("14:00");
+  const [checkOut, setCheckOut] = useState("2026-10-16");
+  const [checkOutTime, setCheckOutTime] = useState("11:00");
+
   return (
     <main>
       <section className="page-banner small-banner">
@@ -49,19 +59,32 @@ export default function BookingPage() {
 
                 <div className="row g-3">
                   <div className="col-md-6">
-                    <label className="form-label fw-semibold">Check In</label>
-                    <input
-                      type="date"
-                      className="form-control form-control-lg"
-                      defaultValue="2026-10-11"
+                    <CustomDatePiker
+                      label="Check In"
+                      value={checkIn}
+                      onChange={(value) => setCheckIn(value)}
                     />
                   </div>
                   <div className="col-md-6">
-                    <label className="form-label fw-semibold">Check Out</label>
-                    <input
-                      type="date"
-                      className="form-control form-control-lg"
-                      defaultValue="2026-10-16"
+                    <CustomDatePiker
+                      label="Check Out"
+                      value={checkOut}
+                      minDate={checkIn}
+                      onChange={(value) => setCheckOut(value)}
+                    />
+                  </div>
+                  <div className="col-md-6">
+                    <CustomTimePiker
+                      label="Check-in time"
+                      value={checkInTime}
+                      onChange={(value) => setCheckInTime(value)}
+                    />
+                  </div>
+                  <div className="col-md-6">
+                    <CustomTimePiker
+                      label="Check-out time"
+                      value={checkOutTime}
+                      onChange={(value) => setCheckOutTime(value)}
                     />
                   </div>
                   <div className="col-md-4">
@@ -121,7 +144,7 @@ export default function BookingPage() {
                     <input
                       type="tel"
                       className="form-control form-control-lg"
-                      placeholder="+11 345 67890"
+                      placeholder="+92 3xxxxxxxx"
                     />
                   </div>
                   <div className="col-12">
@@ -137,9 +160,12 @@ export default function BookingPage() {
                 </div>
 
                 <div className="d-flex flex-wrap gap-3 mt-4">
-                  <button className="btn btn-primary btn-lg rounded-pill px-4 py-3 fw-semibold">
+                  <Link
+                    href="/thank-you"
+                    className="btn btn-primary btn-lg rounded-pill px-4 py-3 fw-semibold"
+                  >
                     Confirm Reservation
-                  </button>
+                  </Link>
                   <Link
                     href="/rooms"
                     className="btn btn-outline-dark btn-lg rounded-pill px-4 py-3 fw-semibold"
