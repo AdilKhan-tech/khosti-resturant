@@ -15,7 +15,9 @@ export default function ThankYouPage() {
       <section className="page-banner small-banner">
         <div className="container h-100 d-flex align-items-center">
           <div>
-            <p className="section-tag mb-2">RESERVATION</p>
+            <p className="section-tag mb-2        Avengers: Endgame (2019)             Avesham movie">
+              RESERVATION
+            </p>
             <h1 className="page-title mb-0">Thank you for booking</h1>
           </div>
         </div>
